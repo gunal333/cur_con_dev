@@ -5,7 +5,8 @@ const port = process.env.PORT||3306
 const unauthorizedRoutes = require('./routes/unauthorized');
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({urlencoded:false}));
-app.use(unauthorizedRoutes);
+app.use('/unauthorized',unauthorizedRoutes);
+
 app.use((req,res,next)=>{
     res.status(404).send('<h2>Page not found</h2>');
   }

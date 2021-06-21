@@ -4,7 +4,7 @@ const router = express.Router();
 const path = require('path');
 router.get('/',(req,res,next)=>{
     request({
-        url:"https://api.exchangerate.host/convert?from=USD&to=INR&date=2021-06-21&amount=15",
+        url:"https://api.exchangerate.host/convert?from=USD&to=INR&date=2021-06-21&amount=20",
         json: true
       },(err,response,body)=>{
          getData(body);
@@ -18,6 +18,14 @@ router.get('/',(req,res,next)=>{
         console.log(data);
         res.render('authorized/saved',{data:data});
      }
-    
 });
+router.get('/login',(req,res,next)=>{
+    res.render('unauthorized/login');
+});
+router.get('/signup',(req,res,next)=>{
+    res.render('unauthorized/signup');
+});
+router.get('/saved',(req,res,next)=>{
+   res.render()
+})
 module.exports = router;
