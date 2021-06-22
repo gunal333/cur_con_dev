@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = process.env.PORT||3306
+const port = process.env.PORT||3000
 const unauthorizedRoutes = require('./routes/unauthorized');
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({urlencoded:false}));
